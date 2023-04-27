@@ -32,4 +32,8 @@ public static class FocalPointExtension
         });
         return builder;
     }
+    public static IImageSharpBuilder AddEPiFocalPointImageSharp(
+       this IServiceCollection services) => AddEPiFocalPointImageSharp(services, _ => { });
+
+    public static void UseEpiFocalPointImageSharp(this IApplicationBuilder app) => app.UseBaaijteOptimizelyImageSharp();
 }
