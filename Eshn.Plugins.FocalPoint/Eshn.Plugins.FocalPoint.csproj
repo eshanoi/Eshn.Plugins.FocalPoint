@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>Eshn.Plugins.FocalPoint</RootNamespace>
+        <PackageId>Eshn.Plugins.FocalPoint</PackageId>
+        <Authors>ES HN</Authors>
+        <AssemblyName>Eshn.Plugins.FocalPoint</AssemblyName>
+        <LangVersion>11</LangVersion>
+        <Company>ES HN</Company>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Include="Resources\FocalPointCropping.xml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="2.1.2" />
+    </ItemGroup>
+       
+    <ItemGroup>
+      <None Update="ClientResources\focal-point.zip">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+       
+    <ItemGroup>
+      <None Remove="modules\_protected\focal-point\focal-point.zip" />
+      <Content Include="modules\_protected\focal-point\focal-point.zip">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Eshn.Plugins.FocalPoint.targets" />
+      <Content Include="Eshn.Plugins.FocalPoint.targets">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+   
+
+</Project>

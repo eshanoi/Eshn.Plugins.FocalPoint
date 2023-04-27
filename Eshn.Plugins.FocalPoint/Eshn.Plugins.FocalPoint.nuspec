@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Eshn.Plugins.FocalPoint</id>
+    <version>1.0.0</version>
+    <authors>ES Ha Noi</authors>
+    <projectUrl>https://github.com/eshanoi/Eshn.Plugins.FocalPoint</projectUrl>
+    <description>This package supports user choose focal point of an image then cropping bases on it</description>
+    <tags>Focal</tags>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Baaijte.Optimizely.ImageSharp.Web" version="2.1.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/any/modules/_protected/focal-point/focal-point.zip" buildAction="None" copyToOutput="true" />
+    </contentFiles>
+
+  </metadata>
+  <files>
+    <file src="ClientResources\focal-point.zip" target="contentFiles\any\any\modules\_protected\focal-point\focal-point.zip" />
+    <file src="bin\Release\net6.0\*.dll" target="lib\net6.0" />
+    <file src="Eshn.Plugins.FocalPoint.targets" target="build\net6.0\" />
+  </files>
+</package>
