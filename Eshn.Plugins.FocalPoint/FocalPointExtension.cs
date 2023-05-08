@@ -1,6 +1,7 @@
 ﻿using Baaijte.Optimizely.ImageSharp.Web;
 using Baaijte.Optimizely.ImageSharp.Web.Caching;
 using EPiServer.Shell.Modules;
+using Eshn.Plugins.FocalPoint;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +11,7 @@ using SixLabors.ImageSharp.Web.DependencyInjection;
 using SixLabors.ImageSharp.Web.Middleware;
 using SixLabors.ImageSharp.Web.Providers;
 
-namespace Eshn.Plugins.FocalPoint;
+namespace Microsoft.Extensions.DependencyInjection;
 
 public static class FocalPointExtension
 {
