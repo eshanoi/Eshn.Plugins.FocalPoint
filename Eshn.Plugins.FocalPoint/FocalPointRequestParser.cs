@@ -31,7 +31,7 @@ public class FocalPointRequestParser : IRequestParser
             return new();
         }
 
-        Dictionary<string, StringValues> parsed = QueryHelpers.ParseQuery(context.Request.QueryString.ToUriComponent());
+        Dictionary<string, StringValues> parsed = QueryHelpers.ParseQuery(context.Request.QueryString.ToUriComponent().Replace("?","&"));
         CommandCollection transformed = new();
         foreach (KeyValuePair<string, StringValues> pair in parsed)
         {
