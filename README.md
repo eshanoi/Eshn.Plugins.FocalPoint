@@ -59,6 +59,14 @@ public abstract class ImageFile : ImageData, IFocalPointData
 
 ```
 
+Disable resize when image width or height is less than expect width or height
+
+```csharp
+var builder = services.AddEPiFocalPointImageSharp(options =>
+{
+    options.IgnoreZoomIn = true;
+});
+```
 #### Additional localizations
 
 Embedded localizations are provided for Swedish and English. Should you need to localize in other languages, you can do so by adding XML translations thusly:
