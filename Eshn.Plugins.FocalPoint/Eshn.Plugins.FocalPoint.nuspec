@@ -2,8 +2,10 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Eshn.Plugins.FocalPoint</id>
-    <version>1.0.3</version>
+    <version>1.0.3-beta</version>
     <authors>ES Ha Noi</authors>
+    <readme>README.md</readme>
+    <license type="file">LICENSE</license>
     <projectUrl>https://github.com/eshanoi/Eshn.Plugins.FocalPoint</projectUrl>
     <description>This package supports user choose focal point of an image then cropping bases on it</description>
     <tags>Focal</tags>
@@ -15,11 +17,16 @@
     <contentFiles>
       <files include="any/any/modules/_protected/focal-point/focal-point.zip" buildAction="None" copyToOutput="true" />
     </contentFiles>
-
+    <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" commit="d349c82fe431b5b193df51089022860ce6831356" />
+    <releaseNotes>
+      - Support ignore resize in case expected width is greater than image width
+    </releaseNotes>
   </metadata>
   <files>
     <file src="ClientResources\focal-point.zip" target="contentFiles\any\any\modules\_protected\focal-point\focal-point.zip" />
     <file src="bin\Release\net6.0\*.dll" target="lib\net6.0" />
     <file src="Eshn.Plugins.FocalPoint.targets" target="build\net6.0\" />
+    <file src="..\LICENSE" target="LICENSE" />
+    <file src="..\README.md" target="README.md" />
   </files>
 </package>
