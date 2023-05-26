@@ -45,9 +45,10 @@ public class FocalPointRequestParser : IRequestParser
         }
 
         int width = 0, height = 0;
+        bool hasWidth = transformed.TryGetValue("width", out var widthStr) && int.TryParse(widthStr, out width);
+        bool hasHeight = transformed.TryGetValue("height", out var heightStr) && int.TryParse(heightStr, out height);
         if (ignoreZoomIn && focalPointData.OriginalWidth.HasValue && focalPointData.OriginalHeight.HasValue
-                         && (transformed.TryGetValue("width", out var widthStr) && int.TryParse(widthStr, out width))
-            || (transformed.TryGetValue("height", out var heightStr) && int.TryParse(heightStr, out height)))
+                         && (hasWidth || hasHeight))
         {
             if (width != 0)
             {
