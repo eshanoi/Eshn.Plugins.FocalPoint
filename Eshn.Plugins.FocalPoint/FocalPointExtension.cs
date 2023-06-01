@@ -32,7 +32,8 @@ public static class FocalPointExtension
             option.HMACSecretKey = eOption.HMACSecretKey;
             
         });
-        services.Intercept<IRequestParser>((_, service) => new FocalPointRequestParser(service));
+        services.AddSingleton<FocalPointRequestParser>();
+        services.Intercept<IRequestParser>((sp, service) => sp.GetInstance<FocalPointRequestParser>());
         services.Configure<ProtectedModuleOptions>(x =>
         {
             if (!x.Items.Any(moduleDetails => moduleDetails.Name.Equals("focal-point")))

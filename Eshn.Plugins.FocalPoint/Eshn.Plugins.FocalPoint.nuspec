@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Eshn.Plugins.FocalPoint</id>
-    <version>1.0.4-beta</version>
+    <version>1.0.5</version>
     <authors>ES Ha Noi</authors>
     <readme>README.md</readme>
     <license type="file">LICENSE</license>
@@ -17,9 +17,10 @@
     <contentFiles>
       <files include="any/any/modules/_protected/focal-point/focal-point.zip" buildAction="None" copyToOutput="true" />
     </contentFiles>
-    <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" commit="d349c82fe431b5b193df51089022860ce6831356" />
+    <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" commit="54e2ff0c70a5bbfef9a26dcbd92120e269929218" />
     <releaseNotes>
-      - Fix bug resize width and height incorrectly when passing both width and height are bigger than current image size 
+      - Fix bug Resizing does not work when ImageData does not have width and height 
+      - Automatic save width and height in the first time access when ImageData does not have width and height
     </releaseNotes>
   </metadata>
   <files>
