@@ -15,10 +15,14 @@ function (on, declare, aspect, registry, WidgetSet, _Widget, _TemplatedMixin, _W
 		postCreate: function () {
 			this.inherited(arguments);
 		},
+		initialize: function () {
+			this.initializeFocalPoint();
+		},
 		startup: function () {
 			this.initializeFocalPoint();
 		},
 		initializeFocalPoint: function () {
+			console.log("Hello");
 			if (this.hasCoordinates()) {
 				this._setFocalPoint(this.value.x, this.value.y, true);
 			} else {

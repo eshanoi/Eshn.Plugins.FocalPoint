@@ -31,7 +31,8 @@ public class CdnSupportBlobImageProvider : IImageProvider
 
         return path.Contains("/contentassets/", StringComparison.OrdinalIgnoreCase)
                || path.Contains("/globalassets/", StringComparison.OrdinalIgnoreCase)
-               || path.Contains("/siteassets/", StringComparison.OrdinalIgnoreCase);
+               || path.Contains("/siteassets/", StringComparison.OrdinalIgnoreCase)
+               || path.Contains("/SysSiteAssets/", StringComparison.OrdinalIgnoreCase);
     }
 
     public bool IsValidRequest(HttpContext context) =>
