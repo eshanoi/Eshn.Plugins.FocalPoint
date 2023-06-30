@@ -1,25 +1,27 @@
-### License
+# Eshn.Plugins.FocalPoint
+
+## License
 
 - Eshn.Plugins.FocalPoint is licensed under the [Apache License, Version 2.0](https://opensource.org/licenses/Apache-2.0)
 - This package is migrated and customized from <https://github.com/defsteph/EPiFocalPoint> and we use [Baaijte.Optimizely.ImageSharp.Web](https://github.com/vnbaaij/Baaijte.Optimizely.ImageSharp.Web) for caching and resizing image.
 
-### Installation
+## Installation
 
-Eshn.Plugins.FocalPoiunt is installed via [Optimizely nuget feed](https://nuget.optimizely.com/package/?id=Eshn.Plugins.FocalPoint)
+Eshn.Plugins.FocalPoint is installed via [Optimizely nuget feed](https://nuget.optimizely.com/package/?id=Eshn.Plugins.FocalPoint)
 
-#### Package Manager
+### Package Manager
 
 ```bash
 PM > Install-Package Eshn.Plugins.FocalPoint -Version VERSION_NUMBER
 ```
 
-#### .NET CLI
+### .NET CLI
 
 ```bash
 dotnet add package Eshn.Plugins.FocalPoint --version VERSION_NAME
 ```
 
-### Setup and configuration
+## Setup and configuration
 
 Once installed you will need to add the following code to `ConfigurationServices` and `Configure` in your `Start.cs` file.
 
@@ -38,7 +40,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 
 **_DO NOT_** add `SixLabors.ImageSharp.Web` and `Baaijte.Optimizely.ImageSharp.Web` settings.
 
-### Usage
+## Usage
 
 Create or make sure your Image Media ContentTypes inherits from `Eshn.Plugins.FocalPoint.FocalPointImageData` or implements `Eshn.Plugins.FocalPoint.IFocalPointImageData`. Remember to decorate the `FocalPoint` property with `[BackingType(typeof(PropertyFocalPoint))]` if you want to implement `Eshn.Plugins.FocalPoint.IFocalPointImageData` manually.
 
@@ -67,7 +69,8 @@ var builder = services.AddEPiFocalPointImageSharp(options =>
     options.IgnoreZoomIn = true;
 });
 ```
-#### Additional localizations
+
+## Additional localizations
 
 Embedded localizations are provided for Swedish and English. Should you need to localize in other languages, you can do so by adding XML translations thusly:
 
