@@ -9,12 +9,12 @@ namespace Eshn.Plugins.FocalPoint
     {
         public FocalPointEditorDescriptor()
         {
-            ClientEditingClass = "focal-point/Editor";
+            ClientEditingClass = "focal-point/editor";
         }
 
         public override void ModifyMetadata(ExtendedMetadata metadata, IEnumerable<Attribute> attributes)
         {
-            ClientEditingClass = "focal-point/Editor";
+            ClientEditingClass = "focal-point/editor";
             base.ModifyMetadata(metadata, attributes);
         }
     }
