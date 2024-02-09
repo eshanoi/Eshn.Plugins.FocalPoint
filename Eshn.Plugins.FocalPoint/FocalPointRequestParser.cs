@@ -6,6 +6,7 @@ using EPiServer.Web.Routing;
 using Eshn.Plugins.FocalPoint.Internal.Data;
 using Eshn.Plugins.FocalPoint.Internal.Services;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -32,7 +33,7 @@ public class FocalPointRequestParser : IRequestParser
 
     public CommandCollection ParseRequestCommands(HttpContext context)
     {
-        var currentContent = ServiceLocator.Current.GetInstance<IContentRouteHelper>().Content;
+        var currentContent = UrlResolver.Current.Route(new UrlBuilder(context.Request.GetDisplayUrl()));
         var imageOption = ServiceLocator.Current.GetInstance<IOptions<EpiImageSharpMiddlewareOptions>>();
         if (context.Request.Query.Count == 0 || currentContent is not IFocalPointData focalPointData)
         {
