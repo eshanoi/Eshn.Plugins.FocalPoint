@@ -1,5 +1,5 @@
-using System.Drawing;
 
+using SixLabors.ImageSharp;
 namespace Eshn.Plugins.FocalPoint.Internal.Data {
 	internal class SizeAdapter : ISize {
 		private readonly Size size;

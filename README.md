@@ -33,12 +33,14 @@ public void ConfigureServices(IServiceCollection services) {
 
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env) {
 
+    // Other middleware registrations
+    app.UseRouting();
     // Add the image processing middleware.
     app.UseEpiFocalPointImageSharp();
 }
 ```
 
-**_DO NOT_** add `SixLabors.ImageSharp.Web` and `Baaijte.Optimizely.ImageSharp.Web` settings.
+**_DO NOT_** add `SixLabors.ImageSharp.Web` and `Baaijte.Optimizely.ImageSharp.Web` settings. Additionally, you can't use `app.UseBaaijteOptimizelyImageSharp();`
 
 ## Usage
 
