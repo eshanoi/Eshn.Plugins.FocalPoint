@@ -10,6 +10,7 @@
         <AssemblyName>Eshn.Plugins.FocalPoint</AssemblyName>
         <LangVersion>11</LangVersion>
         <Company>ES HN</Company>
+        <NuspecFile>Eshn.Plugins.FocalPoint.nuspec</NuspecFile>
     </PropertyGroup>
 
     <ItemGroup>
