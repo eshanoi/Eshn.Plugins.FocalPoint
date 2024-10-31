@@ -23,7 +23,6 @@ public class FocalPointRequestParser : IRequestParser
         { "mode", "rmode" },
         { "pad", "BoxPad" }
     };
-
     public FocalPointRequestParser(ILogger<IRequestParser> logger, IContentRepository contentRepository)
     {
         _logger = logger;
@@ -34,7 +33,7 @@ public class FocalPointRequestParser : IRequestParser
     {
         var currentContent = ServiceLocator.Current.GetInstance<IContentRouteHelper>().Content;
         var imageOption = ServiceLocator.Current.GetInstance<IOptions<EpiImageSharpMiddlewareOptions>>();
-        if (context.Request.Query.Count == 0 || currentContent is not IFocalPointData focalPointData)
+        if (context.Request.Query.Count == 0)
         {
             // We return new to ensure the collection is still mutable via events.
             return new();
@@ -51,6 +50,10 @@ public class FocalPointRequestParser : IRequestParser
             transformed[newKey] = pair.Value[^1];
         }
 
+        if (currentContent is not IFocalPointData focalPointData)
+        {
+            return transformed;
+        }
         int width = 0, height = 0;
         bool hasWidth = transformed.TryGetValue("width", out var widthStr) && int.TryParse(widthStr, out width);
         bool hasHeight = transformed.TryGetValue("height", out var heightStr) && int.TryParse(heightStr, out height);

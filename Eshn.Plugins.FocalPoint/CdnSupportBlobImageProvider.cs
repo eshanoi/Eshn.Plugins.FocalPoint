@@ -1,15 +1,7 @@
-﻿using System.Text.RegularExpressions;
-using Baaijte.Optimizely.ImageSharp.Web.Providers;
-using Baaijte.Optimizely.ImageSharp.Web.Resolvers;
-using EPiServer;
+﻿using Baaijte.Optimizely.ImageSharp.Web.Resolvers;
 using EPiServer.Core;
-using EPiServer.Editor;
-using EPiServer.Web;
 using EPiServer.Web.Routing;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Extensions;
-using SixLabors.ImageSharp.Web;
 using SixLabors.ImageSharp.Web.Providers;
 using SixLabors.ImageSharp.Web.Resolvers;
 

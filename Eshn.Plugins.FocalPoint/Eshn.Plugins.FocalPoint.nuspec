@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Eshn.Plugins.FocalPoint</id>
-    <version>1.0.8</version>
+    <version>1.0.9</version>
     <authors>ES Ha Noi</authors>
     <readme>README.md</readme>
     <license type="file">LICENSE</license>
@@ -19,8 +19,7 @@
     </contentFiles>
     <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" commit="54e2ff0c70a5bbfef9a26dcbd92120e269929218" />
     <releaseNotes>
-      - Fix bug cannot load script in linux
-      - Fix bug cannot resize when item under SysSiteAssets
+      - Fix bug cannot resize image that isn't implemented IFocalPointData
     </releaseNotes>
   </metadata>
   <files>

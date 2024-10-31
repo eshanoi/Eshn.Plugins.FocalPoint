@@ -23,7 +23,7 @@ dotnet add package Eshn.Plugins.FocalPoint --version VERSION_NAME
 
 ## Setup and configuration
 
-Once installed you will need to add the following code to `ConfigurationServices` and `Configure` in your `Start.cs` file.
+Once installed you will need to add the following code to `ConfigurationServices` and `Configure` in your `Startup.cs` file. 
 
 ```csharp
 public void ConfigureServices(IServiceCollection services) {
