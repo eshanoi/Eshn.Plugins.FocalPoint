@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="2.1.2" />
+      <PackageReference Include="Episerver.CMS.Core" Version="12.8.0" />
     </ItemGroup>
        
     <ItemGroup>
