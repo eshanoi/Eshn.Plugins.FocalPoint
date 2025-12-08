@@ -30,13 +30,12 @@ public class CdnSupportBlobImageProvider : IImageProvider
     public bool IsValidRequest(HttpContext context) =>
         _contentRouteHelper.Content is MediaData { BinaryData: not null };
 
-    public Task<IImageResolver> GetAsync(HttpContext context)
+    public Task<IImageResolver?> GetAsync(HttpContext context) // Updated return type to match the interface
     {
         return _contentRouteHelper.Content is MediaData { BinaryData: not null } media
-            ? Task.FromResult((IImageResolver)new BlobImageResolver(media))
-            : Task.FromResult((IImageResolver)null);
+            ? Task.FromResult<IImageResolver?>(new BlobImageResolver(media))
+            : Task.FromResult<IImageResolver?>(null);
     }
-        
 
     public ProcessingBehavior ProcessingBehavior { get; }
     public Func<HttpContext, bool> Match { get; set; }

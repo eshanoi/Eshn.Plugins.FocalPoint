@@ -12,24 +12,14 @@ namespace Eshn.Plugins.FocalPoint.SpecializedProperties
         public override PropertyDataType Type => PropertyDataType.Json;
         public override Type PropertyValueType => typeof(FocalPoint);
 
-        public override object Value
+        public override object? Value
         {
             get
             {
                 var value = base.Value as string;
                 return value == null ? null : JsonConvert.DeserializeObject<FocalPoint>(value);
             }
-            set
-            {
-                if (value is FocalPoint)
-                {
-                    base.Value = JsonConvert.SerializeObject(value);
-                }
-                else
-                {
-                    base.Value = value;
-                }
-            }
+            set => base.Value = value is FocalPoint ? JsonConvert.SerializeObject(value) : value;
         }
 
         public override object SaveData(PropertyDataCollection properties)

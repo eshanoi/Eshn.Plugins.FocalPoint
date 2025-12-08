@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Eshn.Plugins.FocalPoint</RootNamespace>
@@ -18,7 +18,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="2.1.2" />
+      <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="3.0.1" />
+      <PackageReference Include="EPiServer.CMS.AspNetCore" Version="12.21.4" />
+      <PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="12.21.4" />
     </ItemGroup>
        
     <ItemGroup>
@@ -36,6 +38,13 @@
       <Content Include="Eshn.Plugins.FocalPoint.targets">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>
+    </ItemGroup>
+       
+    <ItemGroup>
+      <None Include="..\README.md">
+        <Pack>True</Pack>
+        <PackagePath>\</PackagePath>
+      </None>
     </ItemGroup>
    
 

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Eshn.Plugins.FocalPoint</id>
-    <version>1.0.9</version>
+    <version>2.0.0</version>
     <authors>ES Ha Noi</authors>
     <readme>README.md</readme>
     <license type="file">LICENSE</license>
@@ -10,22 +10,23 @@
     <description>This package supports user choose focal point of an image then cropping bases on it</description>
     <tags>Focal</tags>
     <dependencies>
-      <group targetFramework="net6.0">
-        <dependency id="Baaijte.Optimizely.ImageSharp.Web" version="2.1.2" exclude="Build,Analyzers" />
+      <group targetFramework="net8.0">
+        <dependency id="Baaijte.Optimizely.ImageSharp.Web" version="[3.0.1, )" exclude="Build,Analyzers" />
+		<dependency id="EPiServer.CMS.AspNetCore.HtmlHelpers" version="[12.21.4, )" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <contentFiles>
       <files include="any/any/modules/_protected/focal-point/focal-point.zip" buildAction="None" copyToOutput="true" />
     </contentFiles>
-    <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" commit="54e2ff0c70a5bbfef9a26dcbd92120e269929218" />
+    <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" />
     <releaseNotes>
-      - Fix bug cannot resize image that isn't implemented IFocalPointData
+      - Upgrade to .net 8
     </releaseNotes>
   </metadata>
   <files>
     <file src="ClientResources\focal-point.zip" target="contentFiles\any\any\modules\_protected\focal-point\focal-point.zip" />
-    <file src="bin\Release\net6.0\*.dll" target="lib\net6.0" />
-    <file src="Eshn.Plugins.FocalPoint.targets" target="build\net6.0\" />
+    <file src="bin\Release\net8.0\*.dll" target="lib\net8.0" />
+    <file src="Eshn.Plugins.FocalPoint.targets" target="build\net8.0\" />
     <file src="..\LICENSE" target="LICENSE" />
     <file src="..\README.md" target="README.md" />
   </files>
