@@ -37,6 +37,7 @@ namespace Eshn.Plugins.FocalPoint.Internal.Services
                     {
                         stream.Position = 0;
                         using var image = Image.Load<Rgba32>(stream);
+                        image.Mutate(x => x.AutoOrient());
                         size = new Size
                         {
                             Height = image.Height,
