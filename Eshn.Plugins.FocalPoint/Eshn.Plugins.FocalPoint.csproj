@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net8.0</TargetFramework>
+        <TargetFramework>net10.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RootNamespace>Eshn.Plugins.FocalPoint</RootNamespace>
@@ -11,6 +11,9 @@
         <LangVersion>11</LangVersion>
         <Company>ES HN</Company>
         <NuspecFile>Eshn.Plugins.FocalPoint.nuspec</NuspecFile>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <AssemblyVersion>3.0.0.0</AssemblyVersion>
+        <FileVersion>3.0.0.0</FileVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,9 +21,10 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="3.0.1" />
-      <PackageReference Include="EPiServer.CMS.AspNetCore" Version="12.21.4" />
-      <PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="12.21.4" />
+      <PackageReference Include="Baaijte.Optimizely.ImageSharp.Web" Version="4.0.0" />
+      <PackageReference Include="EPiServer.CMS.AspNetCore" Version="13.1.2" />
+      <PackageReference Include="EPiServer.CMS.AspNetCore.HtmlHelpers" Version="13.1.2" />
+      <PackageReference Include="EPiServer.ImageLibrary.ImageSharp" Version="13.1.2" />
     </ItemGroup>
        
     <ItemGroup>

@@ -1,6 +1,7 @@
 ﻿using Baaijte.Optimizely.ImageSharp.Web;
 using Baaijte.Optimizely.ImageSharp.Web.Caching;
 using Baaijte.Optimizely.ImageSharp.Web.Providers;
+using EPiServer.DependencyInjection;
 using EPiServer.ServiceLocation;
 using EPiServer.Shell.Modules;
 using Eshn.Plugins.FocalPoint;

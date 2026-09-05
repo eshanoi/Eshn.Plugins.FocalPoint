@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>Eshn.Plugins.FocalPoint</id>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
     <authors>ES Ha Noi</authors>
     <readme>README.md</readme>
     <license type="file">LICENSE</license>
@@ -10,9 +10,9 @@
     <description>This package supports user choose focal point of an image then cropping bases on it</description>
     <tags>Focal</tags>
     <dependencies>
-      <group targetFramework="net8.0">
-        <dependency id="Baaijte.Optimizely.ImageSharp.Web" version="[3.0.1, )" exclude="Build,Analyzers" />
-		<dependency id="EPiServer.CMS.AspNetCore.HtmlHelpers" version="[12.21.4, )" exclude="Build,Analyzers" />
+      <group targetFramework="net10.0">
+        <dependency id="Baaijte.Optimizely.ImageSharp.Web" version="[4.0.0, )" exclude="Build,Analyzers" />
+		<dependency id="EPiServer.CMS.AspNetCore.HtmlHelpers" version="[13.1.2, )" exclude="Build,Analyzers" />
       </group>
     </dependencies>
     <contentFiles>
@@ -20,13 +20,13 @@
     </contentFiles>
     <repository type="git" url="https://github.com/eshanoi/Eshn.Plugins.FocalPoint.git" branch="master" />
     <releaseNotes>
-      - Upgrade to .net 8
+      - Upgrade to .net 10
     </releaseNotes>
   </metadata>
   <files>
     <file src="ClientResources\focal-point.zip" target="contentFiles\any\any\modules\_protected\focal-point\focal-point.zip" />
-    <file src="bin\Release\net8.0\*.dll" target="lib\net8.0" />
-    <file src="Eshn.Plugins.FocalPoint.targets" target="build\net8.0\" />
+    <file src="bin\Release\net10.0\*.dll" target="lib\net10.0" />
+    <file src="Eshn.Plugins.FocalPoint.targets" target="build\net10.0\" />
     <file src="..\LICENSE" target="LICENSE" />
     <file src="..\README.md" target="README.md" />
   </files>

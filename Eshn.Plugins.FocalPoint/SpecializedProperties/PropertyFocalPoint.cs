@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Text.Json;
 using EPiServer.Core;
+using EPiServer.DataAnnotations;
 using EPiServer.PlugIn;
-using Newtonsoft.Json;
 
 namespace Eshn.Plugins.FocalPoint.SpecializedProperties
 {
-    [PropertyDefinitionTypePlugIn(Description = "A property to edit the focal point of an image",
+    [PropertyDefinitionType(Description = "A property to edit the focal point of an image",
         DisplayName = "Focal Point")]
     public class PropertyFocalPoint : PropertyLongString
     {
@@ -17,9 +18,9 @@ namespace Eshn.Plugins.FocalPoint.SpecializedProperties
             get
             {
                 var value = base.Value as string;
-                return value == null ? null : JsonConvert.DeserializeObject<FocalPoint>(value);
+                return value == null ? null : JsonSerializer.Deserialize<FocalPoint>(value);
             }
-            set => base.Value = value is FocalPoint ? JsonConvert.SerializeObject(value) : value;
+            set => base.Value = value is FocalPoint ? JsonSerializer.Serialize(value) : value;
         }
 
         public override object SaveData(PropertyDataCollection properties)
